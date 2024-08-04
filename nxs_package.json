@@ -1,0 +1,18 @@
+{
+  "name": "distordia",
+  "displayName": "Distordia module",
+  "version": "0.1.0",
+  "targetWalletVersion": "3.1.0",
+  "description": "Market Data of tokens trading on the Nexus DEX",
+  "type": "app",
+  "entry": "dist/index.html",
+  "icon": "dist/icons/chart.svg",
+  "files": [
+    "dist/index.html",
+    "dist/js/app.js",
+  ],
+  "author": {
+    "name": "AkstonCap",
+    "email": "tbd"
+  }
+}
