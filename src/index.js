@@ -1,16 +1,15 @@
-import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import { listenToWalletData } from 'nexus-module';
+import { useSelector } from 'react-redux';
+import { ModuleWrapper } from 'nexus-module';
 
-import configureStore from './configureStore';
-import App from './App';
+import Main from './Main';
 
-const store = configureStore();
-listenToWalletData(store);
+export default function App() {
+  const initialized = useSelector((state) => state.nexus.initialized);
+  const theme = useSelector((state) => state.nexus.theme);
 
-render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-);
+  return (
+    <ModuleWrapper initialized={initialized} theme={theme}>
+      <Main />
+    </ModuleWrapper>
+  );
+}
